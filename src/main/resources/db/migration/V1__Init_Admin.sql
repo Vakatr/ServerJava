@@ -1,3 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS migrations;
+
 
 create table user_data (
                            id varchar(255) not null,
