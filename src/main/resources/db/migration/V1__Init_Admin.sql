@@ -1,19 +1,20 @@
 
 create table user_data (
-    id varchar(255) not null,
-    name varchar(255) not null,
-    first_name varchar(255),
-    last_name varchar(255),
-    password varchar(255) not null,
-    status varchar(255) default 'ACTIVE',
-    email varchar(255) not null,
-    created timestamp,
-    updated timestamp,
-    user_pic varchar(255),
-    gender varchar(255),
-    locale varchar(255),
-    last_visit timestamp,
-    primary key (id)
+                           id varchar(255) not null,
+                           name varchar(255) not null,
+                           first_name varchar(255),
+                           last_name varchar(255),
+                           password varchar(255) not null,
+                           status varchar(255) default 'ACTIVE',
+                           email varchar(255) not null,
+                           created timestamp,
+                           updated timestamp,
+                           gender varchar(1),
+                           education text,
+                           aboutself text,
+                           locale varchar(255),
+                           last_visit timestamp,
+                           primary key (id)
 );
 
 create table roles (
