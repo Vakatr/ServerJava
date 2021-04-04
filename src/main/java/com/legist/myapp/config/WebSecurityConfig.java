@@ -57,7 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://testserverv.herokuapp.com")
+                .allowedOrigins("*")
+				.allowedHeaders("*")
                 .allowedMethods("*");
     }
 }
