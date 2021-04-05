@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UserService {
     User register(GuestDto guestDto);
-    List<UserDto> getAll();
+    List<UserDto> getAll(String filter);
     User findByName(String name);
     User findById(String id);
     void delete(String id);

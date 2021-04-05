@@ -38,6 +38,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User register(GuestDto guestDto) {
         User user = guestDto.toUser();
+        if (user.getName().length()<3) {return null;}
         Role role = roleRepository.findByName("USER");
         List<Role> userRoles = new ArrayList<>();
         userRoles.add(role);
@@ -51,11 +52,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDto> getAll() {
-        return userDetailsRepository.findAll()
-                .stream()
-                .map(UserDto::fromUser)
-                .collect(Collectors.toList());
+    public List<UserDto> getAll(String filter) {
+        List<UserDto> ListUsers = null;
+        if (filter == "all") {
+            ListUsers = userDetailsRepository.findAll()
+                    .stream()
+                    .map(UserDto::fromUser)
+                    .collect(Collectors.toList());
+        }
+        else if (filter == "legists") {
+            ListUsers = userDetailsRepository
+                    .findByLegists()
+                    .stream()
+                    .map(UserDto::fromUser)
+                    .collect(Collectors.toList());
+        }
+        return ListUsers;
     }
 
     @Override
@@ -78,4 +90,5 @@ public class UserServiceImpl implements UserService {
         userDetailsRepository.save(user);
         return true;
     }
+
 }

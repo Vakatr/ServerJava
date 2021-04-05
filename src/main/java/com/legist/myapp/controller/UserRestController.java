@@ -31,9 +31,17 @@ public class UserRestController {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
     }
-    @GetMapping
-    public ResponseEntity<List<UserDto>> list() {
-        List<UserDto> result = userService.getAll();
+    @GetMapping(value = "getusers")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public ResponseEntity<List<UserDto>> listUsers() {
+        String filter = "all";
+        List<UserDto> result = userService.getAll(filter);
+        return result.size() != 0 ? new ResponseEntity<>(result, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    @GetMapping(value = "getlegists")
+    public ResponseEntity<List<UserDto>> listLegists() {
+        String filter = "legists";
+        List<UserDto> result = userService.getAll(filter);
         return result.size() != 0 ? new ResponseEntity<>(result, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     @GetMapping(value = "getUser/byId/{id}")
