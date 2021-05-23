@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.repository;
 
 import com.legist.myapp.domain.Region;
@@ -9,3 +10,4 @@ public interface RegionsRepository extends CrudRepository<Region, Long> {
     Set<Region> findAll();
     Region findByName(String name);
 }
+*/

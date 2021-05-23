@@ -1,4 +1,4 @@
-
+/*
 package com.legist.myapp.controller;
 
 import com.legist.myapp.domain.Comments;
@@ -110,3 +110,4 @@ public class MessageController {
 
 }
 
+*/

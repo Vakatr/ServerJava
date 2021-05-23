@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.domain;
 
 import javax.persistence.*;
@@ -46,3 +47,4 @@ public class Images {
         this.message = message;
     }
 }
+*/

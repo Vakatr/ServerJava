@@ -22,8 +22,8 @@ public class User extends BaseEntity implements Serializable {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "user_pic")
-    private String userPic;
+    @Column(name = "aboutSelf")
+    private String aboutSelf;
     @Column(name = "email")
     private String email;
     @Column(name = "gender")
@@ -32,11 +32,12 @@ public class User extends BaseEntity implements Serializable {
     private String locale;
     @Column(name = "password")
     private String password;
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Message> messages;
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Comments> comments;
-
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Requests> messages;
+    @OneToMany(mappedBy = "userSpecialistId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Requests> specliallist;
+    @OneToMany(mappedBy = "idAuthor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<News> news;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
@@ -82,12 +83,12 @@ public class User extends BaseEntity implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getUserPic() {
-        return userPic;
+    public String getAboutSelf() {
+        return aboutSelf;
     }
 
-    public void setUserPic(String userPic) {
-        this.userPic = userPic;
+    public void setAboutSelf(String aboutSelf) {
+        this.aboutSelf = aboutSelf;
     }
 
     public String getEmail() {
@@ -138,19 +139,12 @@ public class User extends BaseEntity implements Serializable {
         this.lastVisit = lastVisit;
     }
 
-    public Set<Message> getMessages() {
+    public Set<Requests> getMessages() {
         return messages;
     }
 
-    public void setMessages(Set<Message> messages) {
+    public void setMessages(Set<Requests> messages) {
         this.messages = messages;
     }
 
-    public Set<Comments> getComments() {
-        return comments;
-    }
-
-    public void setComments(Set<Comments> comments) {
-        this.comments = comments;
-    }
 }

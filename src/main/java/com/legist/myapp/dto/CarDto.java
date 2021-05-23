@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.dto;
 
 
@@ -24,7 +25,8 @@ public class CarDto {
         return car;
     }
 
- /*   public static CarDto fromCar(Car car) {
+ */
+/*   public static CarDto fromCar(Car car) {
         CarDto carDto = new CarDto();
         carDto.setId(car.getId());
         carDto.setRegNum(car.getRegNum());
@@ -33,7 +35,8 @@ public class CarDto {
         carDto.setTypeOfBody(car.getTypeOfBody().getName());
         carDto.setTypeOfTransport(car.getTypeOfTransport().getName());
         return carDto;
-    }*/
+    }*//*
+
 
     public Long getId() {
         return id;
@@ -83,3 +86,4 @@ public class CarDto {
         this.typeOfTransport = typeOfTransport;
     }
 }
+*/

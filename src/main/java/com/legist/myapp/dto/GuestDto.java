@@ -8,7 +8,7 @@ public class GuestDto {
     private String name;
     private String firstName;
     private String lastName;
-    private String userPic;
+    private String aboutSelf;
     private String email;
     private String gender;
     private String locale;
@@ -20,7 +20,7 @@ public class GuestDto {
         user.setName(name);
         user.setFirstName(firstName);
         user.setLastName(lastName);
-        user.setUserPic(userPic);
+        user.setAboutSelf(aboutSelf);
         user.setEmail(email);
         user.setGender(gender);
         user.setLocale(locale);
@@ -33,7 +33,7 @@ public class GuestDto {
         guestDto.setName(user.getName());
         guestDto.setFirstName(user.getFirstName());
         guestDto.setLastName(user.getLastName());
-        guestDto.setUserPic(user.getUserPic());
+        guestDto.setAboutSelf(user.getAboutSelf());
         guestDto.setEmail(user.getEmail());
         guestDto.setGender(user.getGender());
         guestDto.setLocale(user.getLocale());
@@ -65,12 +65,12 @@ public class GuestDto {
         this.lastName = lastName;
     }
 
-    public String getUserPic() {
-        return userPic;
+    public String getAboutSelf() {
+        return aboutSelf;
     }
 
-    public void setUserPic(String userPic) {
-        this.userPic = userPic;
+    public void setAboutSelf(String aboutSelf) {
+        this.aboutSelf = aboutSelf;
     }
 
     public String getEmail() {

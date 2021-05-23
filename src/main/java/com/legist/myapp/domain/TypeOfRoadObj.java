@@ -17,8 +17,7 @@ public class TypeOfRoadObj {
     @Length(max = 256,  message = "Многа букав!")
     private String name;
 
-    @OneToMany(mappedBy = "typeOfRoadObj", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Message> typeOfRoadObj;
+
 
     public TypeOfRoadObj() {
     }
@@ -43,11 +42,5 @@ public class TypeOfRoadObj {
         this.name = name;
     }
 
-    public Set<Message> getTypeOfRoadObj() {
-        return typeOfRoadObj;
-    }
 
-    public void setTypeOfRoadObj(Set<Message> typeOfRoadObj) {
-        this.typeOfRoadObj = typeOfRoadObj;
-    }
 }

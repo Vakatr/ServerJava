@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.repository;
 
 import com.legist.myapp.domain.City;
@@ -16,3 +17,4 @@ public interface CitiesRepository extends CrudRepository<City, Long> {
 
     City findByName(String name);
 }
+*/

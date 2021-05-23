@@ -1,13 +1,14 @@
+/*
 package com.legist.myapp.service.impl;
 
 import com.legist.myapp.domain.Comments;
 import com.legist.myapp.domain.Images;
-import com.legist.myapp.domain.Message;
+import com.legist.myapp.domain.News;
 import com.legist.myapp.domain.Status;
-import com.legist.myapp.dto.MessageDto;
+import com.legist.myapp.dto.NewsDto;
 import com.legist.myapp.repository.*;
 import com.legist.myapp.service.CarService;
-import com.legist.myapp.service.MessageService;
+import com.legist.myapp.service.NewsService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +18,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class MessageServiceImpl implements MessageService {
+public class MessageServiceImpl implements NewsService {
 
-    private final MessageRepository messageRepository;
+    private final NewsRepository newsRepository;
     private final RoadObjectsRepository roadObjectsRepository;
     private final StreetsRepository streetsRepository;
     private final UserDetailsRepository userDetailsRepository;
@@ -95,3 +96,4 @@ public class MessageServiceImpl implements MessageService {
         return null;
     }
 }
+*/

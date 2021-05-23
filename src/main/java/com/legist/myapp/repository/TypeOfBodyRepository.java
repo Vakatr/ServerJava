@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.repository;
 
 import com.legist.myapp.domain.TypeOfBody;
@@ -14,3 +15,4 @@ public interface TypeOfBodyRepository extends Repository<TypeOfBody, Long> {
 
     TypeOfBody findByName(String name);
 }
+*/

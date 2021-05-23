@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.domain;
 
 import javax.persistence.*;
@@ -64,3 +65,4 @@ public class Comments extends BaseEntity {
         this.message = message;
     }
 }
+*/

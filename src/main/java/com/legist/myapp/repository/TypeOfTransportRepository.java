@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.repository;
 
 import com.legist.myapp.domain.TypeOfTransport;
@@ -14,3 +15,4 @@ public interface TypeOfTransportRepository extends Repository<TypeOfTransport, L
 
     TypeOfTransport findByName(String name);
 }
+*/

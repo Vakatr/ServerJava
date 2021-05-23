@@ -68,7 +68,9 @@ public class AuthenticationRestController {
         if (newUser != null) {
             return new ResponseEntity<>(UserDto.fromUser(newUser), HttpStatus.CREATED);
         }
-        throw new BadCredentialsException("Invalid username or password");
+        else {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
     private List<String> getRoleNames(List<Role> userRoles) {

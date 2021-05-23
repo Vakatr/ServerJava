@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -190,3 +191,4 @@ public class Message extends BaseEntity {
         this.author = author;
     }
 }
+*/

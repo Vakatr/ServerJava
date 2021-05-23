@@ -15,7 +15,7 @@ public class UserDto {
     private String name;
     private String firstName;
     private String lastName;
-    private String userPic;
+    private String aboutSelf;
     private String email;
     private String gender;
     private String locale;
@@ -29,7 +29,7 @@ public class UserDto {
         user.setName(name);
         user.setFirstName(firstName);
         user.setLastName(lastName);
-        user.setUserPic(userPic);
+        user.setAboutSelf(aboutSelf);
         user.setEmail(email);
         user.setGender(gender);
         user.setLocale(locale);
@@ -45,7 +45,7 @@ public class UserDto {
         userDto.setName(user.getName());
         userDto.setFirstName(user.getFirstName());
         userDto.setLastName(user.getLastName());
-        userDto.setUserPic(user.getUserPic());
+        userDto.setAboutSelf(user.getAboutSelf());
         userDto.setEmail(user.getEmail());
         userDto.setGender(user.getGender());
         userDto.setLocale(user.getLocale());
@@ -90,12 +90,12 @@ public class UserDto {
         this.lastName = lastName;
     }
 
-    public String getUserPic() {
-        return userPic;
+    public String getAboutSelf() {
+        return aboutSelf;
     }
 
-    public void setUserPic(String userPic) {
-        this.userPic = userPic;
+    public void setAboutSelf(String aboutSelf) {
+        this.aboutSelf = aboutSelf;
     }
 
     public String getEmail() {

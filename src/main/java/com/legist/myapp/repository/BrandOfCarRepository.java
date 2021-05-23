@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.repository;
 
 import com.legist.myapp.domain.BrandOfCar;
@@ -11,3 +12,4 @@ public interface BrandOfCarRepository extends Repository<BrandOfCar, Long> {
     BrandOfCar findById(Long id);
     BrandOfCar findByName(String name);
 }
+*/

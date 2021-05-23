@@ -1,3 +1,4 @@
+/*
 package com.legist.myapp.domain;
 
 import org.hibernate.validator.constraints.Length;
@@ -51,3 +52,4 @@ public class TypeOfTransport {
         this.cars = cars;
     }
 }
+*/

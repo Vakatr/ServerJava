@@ -1,9 +1,9 @@
 package com.legist.myapp.controller;
 
-import com.legist.myapp.domain.Message;
+
 import com.legist.myapp.domain.Status;
 import com.legist.myapp.domain.User;
-import com.legist.myapp.dto.MessageDto;
+
 import com.legist.myapp.dto.PasswordChangeDto;
 import com.legist.myapp.dto.UserDto;
 import com.legist.myapp.service.UserService;
@@ -77,6 +77,7 @@ public class UserRestController {
     }
 
     @GetMapping(value = "profile")
+    @PreAuthorize("hasAnyAuthority(\"ADMIN\", \"LEGIST\", \"USER\")")
     public ResponseEntity<UserDto> getProfile(@AuthenticationPrincipal Principal principal) {
         String name = principal.getName();
         UserDto userDto = UserDto.fromUser(userService.findByName(name));
@@ -87,6 +88,7 @@ public class UserRestController {
     }
 
     @PostMapping(value = "profile/change")
+    @PreAuthorize("hasAnyAuthority(\"ADMIN\", \"LEGIST\", \"USER\")")
     public ResponseEntity<UserDto> changeProfile(@AuthenticationPrincipal Principal principal,
                                                  @RequestBody UserDto userDto) {
         if (principal.getName() != null && principal.getName().equals(userDto.getName())) {
@@ -97,7 +99,7 @@ public class UserRestController {
             result.setLastName(userDto.getLastName());
             result.setGender(userDto.getGender());
             result.setLocale(userDto.getLocale());
-            result.setUserPic(userDto.getUserPic());
+            result.setAboutSelf(userDto.getAboutSelf());
             userService.save(result);
             return new ResponseEntity<>(UserDto.fromUser(result), HttpStatus.OK);
         }
@@ -105,6 +107,7 @@ public class UserRestController {
     }
 
     @PostMapping(value = "profile/changePassword")
+    @PreAuthorize("hasAnyAuthority(\"ADMIN\", \"LEGIST\", \"USER\")")
     public ResponseEntity<UserDto> changePassword(@AuthenticationPrincipal Principal principal,
                                                   @RequestBody PasswordChangeDto password) {
         String name = principal.getName();

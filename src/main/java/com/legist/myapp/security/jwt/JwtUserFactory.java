@@ -19,7 +19,7 @@ public final class JwtUserFactory {
                 user.getName(),
                 user.getFirstName(),
                 user.getLastName(),
-                user.getUserPic(),
+                user.getAboutSelf(),
                 user.getPassword(),
                 user.getEmail(),
                 user.getGender(),

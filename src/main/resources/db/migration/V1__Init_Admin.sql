@@ -13,7 +13,8 @@ create table user_data (
                            updated timestamp,
                            gender varchar(1),
                            education text,
-                           aboutself text,
+                           aboutSelf text,
+                           directionOfActivity text,
                            locale varchar(255),
                            last_visit timestamp,
                            primary key (id)

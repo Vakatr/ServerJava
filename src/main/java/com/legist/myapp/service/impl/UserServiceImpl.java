@@ -4,7 +4,6 @@ import com.legist.myapp.domain.Role;
 import com.legist.myapp.domain.Status;
 import com.legist.myapp.domain.User;
 import com.legist.myapp.dto.GuestDto;
-import com.legist.myapp.dto.MessageDto;
 import com.legist.myapp.dto.UserDto;
 import com.legist.myapp.exceptions.UserNotFoundException;
 import com.legist.myapp.repository.RoleRepository;
@@ -35,10 +34,13 @@ public class UserServiceImpl implements UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+
     @Override
     public User register(GuestDto guestDto) {
         User user = guestDto.toUser();
         if (user.getName().length()<3) {return null;}
+        if (user.getPassword().length()<3) {return null;}
+        if (findByName(user.getName()) != null) {return null;}
         Role role = roleRepository.findByName("USER");
         List<Role> userRoles = new ArrayList<>();
         userRoles.add(role);
@@ -54,13 +56,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDto> getAll(String filter) {
         List<UserDto> ListUsers = null;
-        if (filter == "all") {
+        if (filter.equals("all")) {
             ListUsers = userDetailsRepository.findAll()
                     .stream()
                     .map(UserDto::fromUser)
                     .collect(Collectors.toList());
         }
-        else if (filter == "legists") {
+        else if (filter.equals("legists")) {
             ListUsers = userDetailsRepository
                     .findByLegists()
                     .stream()
