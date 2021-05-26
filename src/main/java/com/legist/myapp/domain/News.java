@@ -1,5 +1,6 @@
 package com.legist.myapp.domain;
 
+import com.legist.myapp.model.FileInfo;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -23,7 +24,15 @@ public class News {
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "id_author")
   private User idAuthor;
+  private String file;
 
+  public String getFile() {
+    return file;
+  }
+
+  public void setFile(String file) {
+    this.file = file;
+  }
 
   public long getId() {
     return id;

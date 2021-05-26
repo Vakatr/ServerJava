@@ -19,6 +19,7 @@ public class NewsDto {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateOfUpdated;
     private UserDto author;
+    private String file;
 
     public News toNews() {
         News news = new News();
@@ -28,6 +29,7 @@ public class NewsDto {
         news.setDateOfCreated(dateOfCreated);
         news.setDateOfUpdated(LocalDateTime.now());
         news.setIdAuthor(author.toUser());
+        news.setFile(file);
         return news;
     }
 
@@ -39,6 +41,7 @@ public class NewsDto {
         newsDto.setDateOfCreated(news.getDateOfCreated());
         newsDto.setDateOfUpdated(news.getDateOfUpdated());
         newsDto.setAuthor(UserDto.fromUser(news.getIdAuthor()));
+        newsDto.setFile(news.getFile());
         return newsDto;
     }
 
@@ -89,5 +92,17 @@ public class NewsDto {
 
     public void setAuthor(UserDto author) {
         this.author = author;
+    }
+
+    public LocalDateTime getDateOfUpdated() {
+        return dateOfUpdated;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
     }
 }

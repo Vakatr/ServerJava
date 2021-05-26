@@ -7,6 +7,7 @@ create table news (
                          date_of_created timestamp default current_timestamp,
                          date_of_updated timestamp,
                          id_author varchar(255),
+                         file varchar(255),
                          primary key (id)
 );
 
