@@ -51,7 +51,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public News updateNew(News NewsFromDb, News news) {
-        BeanUtils.copyProperties(news, NewsFromDb, "id","dateOfCreated","idAuthor");
+        BeanUtils.copyProperties(news, NewsFromDb, "id","dateOfCreated","idAuthor","file");
         NewsFromDb.setDateOfUpdated(LocalDateTime.now());
         return newsRepository.save(NewsFromDb);
     }
