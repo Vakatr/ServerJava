@@ -36,7 +36,8 @@ public class NewsServiceImpl implements NewsService {
         news.setDateOfCreated(LocalDateTime.now());
         news.setDateOfUpdated(LocalDateTime.now());
         news.setTitle(newsDto.getTitle());
-        news.setText(newsDto.getText());;
+        news.setText(newsDto.getText());
+        news.setFile(newsDto.getFile());
         return newsRepository.save(news);
     }
 

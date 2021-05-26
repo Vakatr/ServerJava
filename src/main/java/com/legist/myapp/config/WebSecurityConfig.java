@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     private static final String GUEST_ENDPOINT = "/api/v1/news/**";
     private static final String CHAT_ENDPOINT = "/api/v1/chat/**";
     private static final String REQUEST_ENDPOINT = "/api/v1/requests/**";
-    private static final String FILES_ENDPOINT = "/file/**";
+    private static final String FILES_ENDPOINT = "/api/v1/file/**";
     @Autowired
     public WebSecurityConfig(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
