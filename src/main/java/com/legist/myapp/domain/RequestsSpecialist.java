@@ -1,46 +1,29 @@
 package com.legist.myapp.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
-import java.util.Set;
+
 @Entity
-@Table(name = "requests")
-public class Requests {
+@Table(name = "requests_Specialist")
+public class RequestsSpecialist {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
   @Length(max = 2048,  message = "Длинное обращение!")
   @Column(name = "request_text")
-  private String requesttext;
+  private String request_text;
   private String decision;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
   private LocalDateTime created;
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-  @Column(name = "meeting_time")
-  private LocalDateTime meetingtime;
-  private long status;
+  private String status;
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "user_id")
   private User userId;
-  @ManyToOne(fetch = FetchType.EAGER)
-  @JoinColumn(name = "user_specialist_id")
-  private User userSpecialistId;
   private String file;
-
-  public String getFile() {
-    return file;
-  }
-
-  public void setFile(String file) {
-    this.file = file;
-  }
 
   public long getId() {
     return id;
@@ -50,12 +33,12 @@ public class Requests {
     this.id = id;
   }
 
-  public String getRequesttext() {
-    return requesttext;
+  public String getRequestText() {
+    return request_text;
   }
 
-  public void setRequesttext(String requesttext) {
-    this.requesttext = requesttext;
+  public void setRequestText(String request_text) {
+    this.request_text = request_text;
   }
 
   public String getDecision() {
@@ -74,19 +57,11 @@ public class Requests {
     this.created = created;
   }
 
-  public LocalDateTime getMeetingtime() {
-    return meetingtime;
-  }
-
-  public void setMeetingtime(LocalDateTime meetingtime) {
-    this.meetingtime = meetingtime;
-  }
-
-  public long getStatus() {
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(long status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 
@@ -98,11 +73,11 @@ public class Requests {
     this.userId = userId;
   }
 
-  public User getUserSpecialistId() {
-    return userSpecialistId;
+  public String getFile() {
+    return file;
   }
 
-  public void setUserSpecialistId(User userSpecialistId) {
-    this.userSpecialistId = userSpecialistId;
+  public void setFile(String file) {
+    this.file = file;
   }
 }

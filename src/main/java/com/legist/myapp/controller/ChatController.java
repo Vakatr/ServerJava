@@ -91,6 +91,13 @@ public class ChatController {
        return result.size() != 0 ? new ResponseEntity<>(result, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+  /*  @GetMapping("/chatroom/{IdChat}")
+    public ResponseEntity<List<ChatRoomDto>> CheckRoom (@AuthenticationPrincipal Principal principal){
+    UserDto userDto = UserDto.fromUser(userService.findByName(principal.getName()));
+    List<ChatRoomDto> result = chatRoomService.findChatMessages(IdChat);
+        return result.size() != 0 ? new ResponseEntity<>(result, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }*/
+
     @PostMapping("/sendmessage")
     public ResponseEntity<ChatMessageDto> SendMessage(@RequestBody ChatMessageDto chatMessageDto, @AuthenticationPrincipal Principal principal) {
         UserDto userDto = UserDto.fromUser(userService.findByName(principal.getName()));

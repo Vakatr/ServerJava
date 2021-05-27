@@ -27,6 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     private static final String CHAT_ENDPOINT = "/api/v1/chat/**";
     private static final String REQUEST_ENDPOINT = "/api/v1/requests/**";
     private static final String FILES_ENDPOINT = "/api/v1/file/**";
+    private static final String LEGIST_ENDPOINT = "/api/v1/legist/**";
+
     @Autowired
     public WebSecurityConfig(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
@@ -51,6 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
                 .antMatchers(GUEST_ENDPOINT).permitAll()
                 .antMatchers(FILES_ENDPOINT).permitAll()
                 .antMatchers(CHAT_ENDPOINT).authenticated()
+                .antMatchers(LEGIST_ENDPOINT).authenticated()
                 .antMatchers(REQUEST_ENDPOINT).authenticated()
                 .antMatchers(ADMIN_ENDPOINT).hasAuthority("ADMIN")
                 .anyRequest().authenticated()

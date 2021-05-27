@@ -20,6 +20,7 @@ public class RequestDto {
     private LocalDateTime created;
     private UserDto userId;
     private UserDto userSpecialistId;
+    private String file;
 
     public Requests toRequest() {
         Requests requests = new Requests();
@@ -31,6 +32,7 @@ public class RequestDto {
         requests.setDecision(decision);
         requests.setUserId(userId.toUser());
         requests.setUserSpecialistId(userSpecialistId.toUser());
+        requests.setFile(file);
         return requests;
     }
 
@@ -44,7 +46,16 @@ public class RequestDto {
         requestDto.setMeeting_time(requests.getMeetingtime());
         requestDto.setUserId(UserDto.fromUser(requests.getUserId()));
         requestDto.setUserSpecialistId(UserDto.fromUser(requests.getUserSpecialistId()));
+        requestDto.setFile(requests.getFile());
         return requestDto;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
     }
 
     public Long getId() {

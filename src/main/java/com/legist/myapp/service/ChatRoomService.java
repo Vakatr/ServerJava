@@ -36,6 +36,13 @@ public class ChatRoomService {
                 .collect(Collectors.toList());
     }
 
+    public List<ChatRoomDto> NewMessage(String id) {
+        return chatRoomRepository.find(id)
+                .stream()
+                .map(ChatRoomDto::fromChatRoom)
+                .collect(Collectors.toList());
+    }
+
     public void deleteChatRoom(ChatRoom chatRoom) {
         chatRoomRepository.deleteById(chatRoom.getId());
     }

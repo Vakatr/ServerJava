@@ -42,6 +42,7 @@ public class RequestsServiceImpl implements RequestsService {
         requests.setCreated(LocalDateTime.now());
         requests.setStatus(1);
         requests.setDecision(requestDto.getDecision());
+        requests.setFile(requestDto.getFile());
         requests.setUserId(userDetailsRepository.findByName(requestDto.getUserId().getName()));
         requests.setUserSpecialistId(userDetailsRepository.findByName(requestDto.getUserSpecialistId().getName()));
         return requestRepository.save(requests);
