@@ -9,6 +9,6 @@ create table files (
 );
 
 insert into files (id,name,key)
-VALUES (1000,'Test1','9ead8295-3125-465d-bfae-bfc7bae0dfcf');
+VALUES (1000,'Test1.pdf','9ead8295-3125-465d-bfae-bfc7bae0dfcf');
 insert into files (id,name,key)
-VALUES (2000,'Test2','25aa338f-bdd1-4ef9-8cfb-10f8aae95254');
+VALUES (2000,'Test2.pdf','25aa338f-bdd1-4ef9-8cfb-10f8aae95254');
